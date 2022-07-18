@@ -2,7 +2,7 @@ package com.bl.analyzer;
 
 public class MoodAnalyzer {
 
-private String message;
+    private String message;
 
     public MoodAnalyzer(String message) {
         this.message = message;
@@ -13,8 +13,12 @@ private String message;
     }
 
     public String analyseMood() {
-        if (message.contains("Sad"))
-        return "Sad";
-        return "Happy";
+        try {
+            if (message.contains("Sad"))
+                return "Sad";
+            return "Happy";
+        }catch (NullPointerException e){
+            return "Happy";
+        }
     }
 }
