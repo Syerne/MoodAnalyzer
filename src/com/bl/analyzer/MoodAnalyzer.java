@@ -16,9 +16,9 @@ public class MoodAnalyzer {
         try {
             if (message.contains("Sad"))
                 return "Sad";
-            return "Happy";
+                return "Happy";
         }catch (NullPointerException e){
-            return "Happy";
+            throw new MoodAnalysisException("Please enter valid inputs");
         }
     }
 }
